@@ -34,6 +34,14 @@ function viewCart() {
     console.log(`In your cart, you have ${key} at $${price}.`)
     return `In your cart, you have ${key} at $${price}.`
 
+  }else if(cart.length===2){
+    var key1 = Object.keys(cart[0])[0]
+    var key2 = Object.keys(cart[1])[0]
+    var price1 = cart[0][key1]
+    var price2 = cart[1][key2]
+
+    console.log(`In your cart, you have ${key1} at $${price1} and ${key2} at $${price2}.`)
+    return `In your cart, you have ${key1} at $${price1} and ${key2} at $${price2}.`
   }else{
     for(var i=0; i<cart.length; i++){
       var key = Object.keys(cart[i])[0]
