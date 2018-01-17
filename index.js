@@ -1,4 +1,4 @@
-var cart = [];
+  var cart = [];
 
 function getCart() {
  return cart;
@@ -20,11 +20,19 @@ function addToCart(itemName) {
 }
 
 function viewCart() {
-  // write your code here
+  // write your code
+
   var content = ``
 
   if(cart.length===0){
+    console.log(`Your shopping cart is empty.`)
     return `Your shopping cart is empty.`
+  }else if(cart.length===1){
+
+    var key = Object.keys(cart[0])[0]
+    var price = cart[0][key]
+    console.log(`In your cart, you have ${key} at ${price}.`)
+    return `In your cart, you have ${key} at ${price}.`
   }else{
     for(var i=0; i<cart.length; i++){
       var key = Object.keys(cart[i])[0]
@@ -34,7 +42,7 @@ function viewCart() {
         console.log(`${key} at ${price}, `)
         content += `${key} at ${price}, `
       }else{
-        content += `${key} at ${price}.`
+        content += `and ${key} at ${price}.`
       }
     }
 
