@@ -107,10 +107,11 @@ function placeOrder(cardNumber) {
 
   var totalAmt = total()
   if(cardNumber===undefined){
-    return `Sorry, we don't have a credit card on file for you.`
+    console.log(`Sorry, we don\'t have a credit card on file for you.`)
+    return `Sorry, we don\'t have a credit card on file for you.`
   }else{
     cart.splice(0,cart.length)
-
+    console.log(`Your total cost is $${totalAmt}, which will be charged to the card ${cardNumber}.`)
     return `Your total cost is $${totalAmt}, which will be charged to the card ${cardNumber}.`
   }
 }
